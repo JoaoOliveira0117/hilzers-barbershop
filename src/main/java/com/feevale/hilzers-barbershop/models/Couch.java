@@ -1,6 +1,11 @@
-import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 public class Couch {
-  private final int MAX_CUSTOMERS = 3;
-  private ArrayList<Customer> customersWaiting = new ArrayList<Customer>();
+  private final int MAX_CUSTOMERS = 4;
+  public List<Customer> customersInCouch = new LinkedList<Customer>();
+
+  public void customerSitting(Customer cust){
+    customersInCouch.add(cust);
+  }
 }
