@@ -17,7 +17,7 @@ public class PaymentOperationalSystem extends Thread {
 
     public void processPayment() {
         // Logica de pagamento aqui
-    	System.out.println("Cliente " + this.currentCustomer.getName() + " efetuou o pagamento ao Barbeiro " + "Barbeiro " + this.currentBarber.getName());
+    	System.out.println("Cliente " + this.currentCustomer.getName() + " efetuou o pagamento ao " + "Barbeiro " + this.currentBarber.getName());
         // Aumenta o numero de barbeiros livres apos pagamento
         this.currentBarber.getBarbershop().freeBarbers++;
     }
