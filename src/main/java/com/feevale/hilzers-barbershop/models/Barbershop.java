@@ -1,3 +1,5 @@
+
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -62,25 +64,41 @@ public class Barbershop {
 	    return indexCurrentChair;
 	}
 
-  public void enteringCustomer(Customer customer) {
-	    synchronized (customersInBarbershop) {
-	        synchronized (couch) {
-	            if (customersInBarbershop.size() + couch.size() == 20) {
-	                System.out.println("Cliente " + customer.getName() + " nao entrou na barbearia por estar cheia!");
-	            } else if (freeBarbers > 0) {
-	                System.out.println("Cliente " + customer.getName() + " entrou na barbearia");
-	                ((LinkedList<Customer>) couch).offer(customer);
-	                couch.notify();
-	            } else if (couch.size() < 4) {
-	                System.out.println("Cliente " + customer.getName() + " entrou na barbearia");
-	                ((LinkedList<Customer>) couch).offer(customer);
-	                System.out.println("Cliente " + customer.getName() + " sentou no sofa");
-	            } else {
-	                System.out.println("Cliente " + customer.getName() + " entrou na barbearia");
-	                ((LinkedList<Customer>) customersInBarbershop).offer(customer);
-	                System.out.println("Cliente " + customer.getName() + " espera um lugar no sofa");
-	            }
-	        }
-		}
+
+	public void enteringCustomer(Customer customer) {
+	   // Sincroniza o acesso à lista de clientes na barbearia
+	   synchronized (customersInBarbershop) {
+	       // Sincroniza o acesso ao sofá de espera
+	       synchronized (couch) {
+	           // Verifica se a barbearia está cheia
+	           if (customersInBarbershop.size() + couch.size() == 20) {
+	               System.out.println("Cliente " + customer.getName() + " não entrou na barbearia por estar cheia!");
+	           } 
+	           // Verifica se há barbeiros livres
+	           else if (freeBarbers > 0) {
+	               System.out.println("Cliente " + customer.getName() + " entrou na barbearia");
+	               ((LinkedList<Customer>) couch).offer(customer); // Adiciona o cliente ao sofá de espera
+	               couch.notify(); // Notifica um barbeiro disponível
+	           } 
+	           // Verifica se o sofá de espera tem espaço
+	           else if (couch.size() < 4) {
+	               System.out.println("Cliente " + customer.getName() + " entrou na barbearia");
+	               ((LinkedList<Customer>) couch).offer(customer); // Adiciona o cliente ao sofá de espera
+	               System.out.println("Cliente " + customer.getName() + " sentou no sofá");
+	           } 
+	           // Caso contrário, adiciona o cliente à lista de espera da barbearia
+	           else {
+	               System.out.println("Cliente " + customer.getName() + " entrou na barbearia");
+	               ((LinkedList<Customer>) customersInBarbershop).offer(customer);
+	               System.out.println("Cliente " + customer.getName() + " espera um lugar no sofá");
+	           }
+	       }
+	   }
 	}
+
 }
+
+
+
+
+// System.out.println("Clientes na baberaria: " + (customersInBarbershop.size() + couch.size() ) );
