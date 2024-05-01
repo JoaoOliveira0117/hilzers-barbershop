@@ -1,4 +1,3 @@
-import java.util.Date;
 import java.util.Random;
 
 public class Main {
@@ -14,7 +13,7 @@ public class Main {
         }
 
         int delayMs = 0;
-        for(int i = 1; i <= 40; i++){
+        for(int i = 1; i <= 21; i++){
             Double randomTime = random.nextGaussian() * 1000 + 2000;
             delayMs = Math.abs((int)Math.round(randomTime));
             Customer customer = new Customer("" + i);
@@ -25,5 +24,7 @@ public class Main {
                 e.printStackTrace();
             }
         }
+
+        
     }
 }

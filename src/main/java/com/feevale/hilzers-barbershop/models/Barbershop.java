@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Random;
 
 public class Barbershop {
   public final int MAX_CUSTOMERS= 20;
@@ -13,6 +14,7 @@ public class Barbershop {
 
   public int hairCutting(Barber barber){
 	    Customer customer, customerToCouch;
+		Random randomizer = new Random();
 	    synchronized(couch){
 	        while(couch.size() == 0){
 	            System.out.println("Barbeiro " + barber.getName() + " dormindo esperando por cliente");
@@ -49,7 +51,7 @@ public class Barbershop {
 	        System.out.println("Barbeiro " + chairs.get(indexCurrentChair).currentBarber.getName() + " esta cortando o cabelo do cliente " 
 	            + chairs.get(indexCurrentChair).currentCustomer.getName());
 
-	        Thread.sleep(20000);
+	        Thread.sleep(10000);
 	        System.out.println("Barbeiro " + chairs.get(indexCurrentChair).currentBarber.getName() + " terminou de cortar o cabelo do cliente "
 	            + chairs.get(indexCurrentChair).currentCustomer.getName());
 
