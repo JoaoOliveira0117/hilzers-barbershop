@@ -1,20 +1,15 @@
-import java.util.Date;
-
 public class Customer extends Thread{
-  private Date waitTime;
-
   Barbershop barbershop;
 
-  public Customer(String nomeThread, Date waitTime){
+  public Customer(String nomeThread){
     super(nomeThread);
-    this.waitTime = waitTime;
   }
 
-  public void run(Barbershop barbershop, Couch couch){
+  public void run(Barbershop barbershop){
     hairCut();
   }
 
   public synchronized void hairCut(){
-    barbershop.couch.customersInCouch.add(this);
+    barbershop.couch.add(this);
   }
 }
