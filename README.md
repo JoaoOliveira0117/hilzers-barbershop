@@ -13,15 +13,15 @@ barbeiros quanto os clientes devem ser implementados como Threads.
 
 ### Requisitos:
 
-- [ ] Três cadeiras;
-- [ ] Três barbeiros;
-- [ ] Uma sala de espera com um sofá de quatro lugares;
-- [ ] O número total de clientes permitidos na barbearia é 20;
-- [ ] Nenhum cliente entrará se a capacidade do local estiver satisfeita;
-- [ ] Se o cliente entrou e tiver lugar no sofá ele se senta, caso contrário ele espera em pé;
-- [ ] Quando um barbeiro está livre para atender, o cliente que está a mais tempo no sofá é atendido e o que está a mais tempo em pé se senta;
-- [ ] Qualquer barbeiro pode aceitar pagamento, mas somente um cliente pode pagar por vez, porque só há uma POS;
-- [ ] Os barbeiros dividem o seu tempo entre cortar cabelo, receber pagamento e dormir enquanto esperam por um cliente.
+- [x] Três cadeiras;
+- [x] Três barbeiros;
+- [x] Uma sala de espera com um sofá de quatro lugares;
+- [x] O número total de clientes permitidos na barbearia é 20;
+- [x] Nenhum cliente entrará se a capacidade do local estiver satisfeita;
+- [x] Se o cliente entrou e tiver lugar no sofá ele se senta, caso contrário ele espera em pé;
+- [x] Quando um barbeiro está livre para atender, o cliente que está a mais tempo no sofá é atendido e o que está a mais tempo em pé se senta;
+- [x] Qualquer barbeiro pode aceitar pagamento, mas somente um cliente pode pagar por vez, porque só há uma POS;
+- [x] Os barbeiros dividem o seu tempo entre cortar cabelo, receber pagamento e dormir enquanto esperam por um cliente.
 
 
 <sub>
