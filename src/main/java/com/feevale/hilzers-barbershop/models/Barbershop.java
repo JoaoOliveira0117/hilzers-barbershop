@@ -3,7 +3,6 @@
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Random;
 
 public class Barbershop {
   public final int MAX_CUSTOMERS= 20;
@@ -16,7 +15,6 @@ public class Barbershop {
 
   public int hairCutting(Barber barber){
 	    Customer customer, customerToCouch;
-		Random randomizer = new Random();
 	    synchronized(couch){
 	        while(couch.size() == 0){
 	            System.out.println("Barbeiro " + barber.getName() + " dormindo esperando por cliente");
